@@ -20,6 +20,9 @@ Other options of periodic fetching:
 ### Create virtualenv
 * `python -m venv /path/to/venv`
 
+### Clone repo
+`git clone https://github.com/stan7123/sunscrapers.git .`
+
 ### Install python dependencies
 * `pip install -r requirements.txt`
 
