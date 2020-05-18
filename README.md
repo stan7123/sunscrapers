@@ -38,11 +38,12 @@ TODO
 ## API
 
 ### Example API call for
-Just call `http://localhost:8000/api/v1/currency/` to see the list.
+Just call `http://localhost:8000/api/v1/currency/` to see the list or `http://localhost:8000/api/v1/currency/[BASE_TICKER]/[TARGET_TICKER]/` for specific rate.
+
 
 ### Settings
 You can configure interval for rates fetching in settings under: `RATES_FETCH_INTERVAL_IN_MINUTES`
 
 #TODO:
 * Tests for fetching data - no more logic to test actually
-* Maybe put out some swagger API description. Although for such a simple endpoint it seems redundant.
+* Maybe put out some swagger API description. Although for these a simple endpoints it seems redundant.
