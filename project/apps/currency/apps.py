@@ -2,4 +2,8 @@ from django.apps import AppConfig
 
 
 class CurrencyConfig(AppConfig):
-    name = 'currency'
+    name = 'project.apps.currency'
+
+    def ready(self):
+        from project.apps.currency import scheduler
+        scheduler.start()

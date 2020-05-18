@@ -1,8 +1,10 @@
 # Currency README
 
-Application fetches data about currencies rates and provides API endpoint with this data. 
-
+Application fetches data about currencies rates and provides API endpoint with current rates data. 
+(I made design decision to make available only last rates via API).
 Rates are fetched regularly from: https://www.ecb.europa.eu/home/html/rss.en.html
+
+Project uses Sqlite DB.
 
 ### Data fetching
 Fetching is done by Python scheduler initialized during app init.
@@ -22,20 +24,25 @@ Other options of periodic fetching:
 * `pip install -r requirements.txt`
 
 ### Run database migrations
-./manage.py migrate
+python manage.py migrate
 
 ### Create admin account
-./manage.py createsuperuser
+python manage.py createsuperuser
 
 ### Run server
-./manage.py runserver --noreload (to not start many schedulers)
+python manage.py runserver --noreload (avoid running many schedulers)
 
 ### Run tests
-...
+TODO
 
 ## API
 
 ### Example API call for
-Write about API here or give link to swagger... 
-* `curl -H "Content-Type: application/json" -X POST -d '{"email":"alama@kotaduzego.pl","username":"alama","password1":"XYab31415","password2":"XYab31415"}' 127.0.0.1:8000/api/v1/register/`
+Just call `http://localhost:8000/api/v1/currency/` to see the list.
 
+### Settings
+You can configure interval for rates fetching in settings under: `RATES_FETCH_INTERVAL_IN_MINUTES`
+
+#TODO:
+* Tests for fetching data - no more logic to test actually
+* Maybe put out some swagger API description. Although for such a simple endpoint it seems redundant.

@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.generics import ListAPIView
+from project.apps.currency.serializers import ExchangeRateSerializer
+from project.apps.currency.models import ExchangeRate
 
-# Create your views here.
+
+class ExchangeRateListView(ListAPIView):
+    serializer_class = ExchangeRateSerializer
+    queryset = ExchangeRate.objects.all()
